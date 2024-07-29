@@ -1,0 +1,262 @@
+﻿Field Position,Field Name,Description,Date Bound Notes,Respective Disclosure Notes,CAS,CIRT,Single-Family (SF) Loan Performance,Type,Max Length
+1,Reference Pool ID,A unique identifier for the reference pool.,,,√,√,NA,ALPHA-NUMERIC,X(4)
+2,Loan Identifier,A unique identifier for the mortgage loan.,,The Loan Identifier does not correspond to other mortgage loan identifiers found in existing Fannie Mae disclosures.,√,√,√,ALPHA-NUMERIC,X(12)
+3,Monthly Reporting Period,The month and year that pertains to the servicer’s cut-off period for mortgage loan information.,SF Loan Performance: Enhanced format with the October 2020 Release,,√,√,√,DATE,MMYYYY
+4,Channel,The origination channel used by the party that delivered the loan to the issuer.,,Retail = R; Correspondent = C; Broker = B,√,√,√,ALPHA-NUMERIC,X(1)
+5,Seller Name,The name of the entity that delivered the mortgage loan to Fannie Mae.,,"CAS/CIRT: For sellers whose combined loans' contribution to the At Issuance UPB represents less than 1% of the total At Issuance reference pool UPB, the file will reflect ""Other"".
+
+SF Loan Performance: For sellers that represent less than one percent of volume within a given acquisition quarter as represented by the original unpaid principal balance, ""Other"" will be displayed in this field.",√,√,√,ALPHA-NUMERIC,X(50)
+6,Servicer Name,The name of the entity that serves as the primary servicer of the mortgage loan.,"SF Loan Performance: For activity periods prior to December 2001, Servicer Name will be blank since the servicer information for this period is unavailable. ","CAS/CIRT: For servicers whose combined loans' contribution to the At Issuance UPB represents less than 1% of the total At Issuance reference pool UPB, the file will reflect ""Other"".
+
+SF Loan Performance: For servicers that represent less than one percent of the current actual unpaid principal balance for the last month of a given quarter, ""Other"" will be displayed in this field. ",√,√,√,ALPHA-NUMERIC,X(50)
+7,Master Servicer,Fannie Mae,,,√,√,NA,ALPHA-NUMERIC,X(10)
+8,Original Interest Rate,The original interest rate on a mortgage loan as identified in the original mortgage note.,CAS/CIRT: Enhanced format starting with the July 2020 activity period,,√,√,√,NUMERIC,9(2).999
+9,Current Interest Rate,The rate of interest in effect for the periodic installment due.,CAS/CIRT: Enhanced format starting with the July 2020 activity period,"For a mortgage loan that has been modified, this value will be updated to reflect the modified terms, if applicable.",√,√,√,NUMERIC,9(2).999
+10,Original UPB,The dollar amount of the loan as stated on the note at the time the loan was originated.,SF Loan Performance: Enhanced format with the October 2020 Release,Values disclosed will be rounded.,√,√,√,NUMERIC,9(10).99
+11,UPB at Issuance,The unpaid principal balance of the loan as of the cut-off date of the reference pool.,,Cut-off date as is defined in each of the individual CRT offering documents.,√,√,NA,NUMERIC,9(10).99
+12,Current Actual UPB,"The current actual outstanding unpaid principal balance of a mortgage loan, reflective of payments actually received from the related borrower.",,"For a mortgage loan that has been modified, the current actual UPB will be updated to reflect the modified terms, including principal forgiveness, if applicable. The current actual UPB will be reduced to zero in the month in which the loan is removed from the Reference Pool, as applicable. 
+
+Any non-interest-bearing deferral amount created as a result of a Payment Deferral will be included in the Current Actual UPB. 
+
+The Current Actual UPB includes the sum of the Interest Bearing UPB, Modification-Related Non-Interest Bearing UPB and Total Deferral Amount. 
+
+Due to borrower privacy considerations, this value will be masked for the first six months of the life of the loan.",√,√,√,NUMERIC,9(10).99
+13,Original Loan Term,"For fixed-rate, adjustable-rate and Interest-only mortgages, the number of months in which regularly scheduled borrower payments are due at the time the loan was originated.",,,√,√,√,NUMERIC,9(3)
+14,Origination Date,The date of each individual note.,SF Loan Performance: Enhanced format with the October 2020 Release,,√,√,√,DATE,MMYYYY
+15,First Payment Date,The date of the first scheduled mortgage loan payment to be made by the borrower under the terms of the mortgage loan documents.,SF Loan Performance: Enhanced format with the October 2020 Release,,√,√,√,DATE,MMYYYY
+16,Loan Age,"The number of calendar months since the mortgage loan's origination date. For purposes of calculating this data element, origination means the date on which the first full month of interest begins to accrue.",,,√,√,√,NUMERIC,9(3)
+17,Remaining Months to Legal Maturity,The number of calendar months remaining until the mortgage loan is due to be paid in full based on the maturity date as defined in the mortgage documents.,,,√,√,√,NUMERIC,9(3)
+18,Remaining Months To Maturity,"The number of calendar months remaining until the outstanding unpaid principal balance of the mortgage loan amortizes to a zero balance, taking into account any additional prepayments, which could lead to the loan paying off earlier than its maturity date.",,This field will be left blank for mortgage loans that have been modified.  ,√,√,√,NUMERIC,9(3)
+19,Maturity Date,The month and year in which a mortgage loan is scheduled to be paid in full as defined in the mortgage loan documents.,SF Loan Performance: Enhanced format with the October 2020 Release,"For a mortgage loan that has been modified, the maturity date will be updated to reflect the modified terms, if applicable.",√,√,√,DATE,MMYYYY
+20,Original Loan to Value Ratio (LTV),"The ratio, expressed as a percentage, obtained by dividing the amount of the loan at origination by the value of the property.",,"This field is calculated by dividing the original loan amount by either (1) in the case of a purchase, the lower of the sales price of a mortgaged property or its value at the time of the sale, or (2) in the case of a refinancing, the value of the mortgaged property at the time of refinancing. For the purposes of calculating the LTV ratio and determining eligibility for a mortgage loan acquired through a HARP refinancing, an appraisal is not required if Fannie Mae waived the property fieldwork requirements to establish program eligibility.  The disclosed LTV ratio for that loan is based on an estimate of value produced by an automated valuation model at the time of the refinance.  Alternatively, if Fannie Mae did not waive the property fieldwork requirements, an appraisal can be provided to Fannie Mae by the lender to establish program eligibility.  When an appraisal is obtained and is used to successfully establish HARP program eligibility, it is used to calculate the disclosed LTV ratio. Value is reported as null if LTV is >97% or is >200% for a mortgage loan acquired through a HARP refinance, or unknown.",√,√,√,NUMERIC,9(3)
+21,Original Combined Loan to Value Ratio (CLTV),"The ratio, expressed as a percentage, obtained by dividing the amount of all known outstanding loans at origination by the value of the property.",,"This field is calculated by adding together (i) the original loan amount of the first lien mortgage loan, (ii) the amount then currently drawn on a home equity line of credit as of the origination date of the underlying mortgage loan, and (iii) the outstanding principal balance of any other subordinate mortgage loan as of the origination date of the underlying mortgage loan, and dividing the resulting sum by the lower of (x) the sales price of the mortgaged property and (y) the value of the mortgaged property.",√,√,√,NUMERIC,9(3)
+22,Number of Borrowers,The number of individuals obligated to repay the mortgage loan.,,,√,√,√,NUMERIC,9(2)
+23,Debt-To-Income (DTI),The ratio obtained by dividing the total monthly debt expense by the total monthly income of the borrower at the time the loan was originated.,CAS/CIRT: Enhanced format starting with the July 2020 activity period,"For values outside the allowable range, or if unknown, or if the mortgage loan is a HARP refinance, this value will be blank.",√,√,√,NUMERIC,9(2)
+24,Borrower Credit Score at Origination,"A numerical value used by the financial services industry to evaluate the quality of borrower’s credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to the ""Classic"" FICO score developed by Fair Isaac Corporation.",,"This is the representative credit score provided to Fannie Mae by the Seller at the time of loan acquisition.  The representative credit score of an individual borrower is either i) the lower of two scores if a score is received from two Credit Score Repositories for the borrower, or the middle of three scores if a score is received from three Credit Score Repositories for the borrower. This evaluation is done for each borrower on the loan.
+If there are more than two borrowers, the Borrower Credit Score at Origination field will be populated with the primary borrower’s representative credit score.  The Co-Borrower Credit Score at Origination field will be populated with the lowest representative credit score of the remaining borrowers, unless the primary borrower’s representative credit score is the lowest of all the borrowers, in which case the Co-Borrower Credit Score at Origination will be populated with the secondary borrower’s representative credit score.  
+If the borrower credit score is unknown, the value will be blank.",√,√,√,NUMERIC,9(3)
+25,Co-Borrower Credit Score at Origination,"A numerical value used by the financial services industry to evaluate the quality of borrower’s credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to the ""Classic"" FICO score developed by Fair Isaac Corporation.",,"This is the representative credit score provided to Fannie Mae by the Seller at the time of loan acquisition.  The representative credit score of an individual borrower is either i) the lower of two scores if a score is received from two Credit Score Repositories for the borrower, or the middle of three scores if a score is received from three Credit Score Repositories for the borrower. This evaluation is done for each borrower on the loan.
+If there are more than two borrowers, the Borrower Credit Score at Origination field will be populated with the primary borrower’s representative credit score.  The Co-Borrower Credit Score at Origination field will be populated with the lowest representative credit score of the remaining borrowers, unless the primary borrower’s representative credit score is the lowest of all the borrowers, in which case the Co-Borrower Credit Score at Origination will be populated with the secondary borrower’s representative credit score.  
+If the borrower credit score is unknown, the value will be blank.",√,√,√,NUMERIC,9(3)
+26,First Time Home Buyer Indicator,An indicator that denotes if the borrower or co-borrower qualifies as a first-time homebuyer.,,"An individual is to be considered a first-time homebuyer who (1) is purchasing the property; (2) will reside in the property; and (3) had no ownership interest (sole or joint) in a residential property during the three-year period preceding the date of the purchase of the property. In addition, an individual who is a displaced homemaker or single parent also will be considered a first-time homebuyer if he or she had no ownership interest in a principal residence (other than a joint ownership interest with a spouse) during the preceding three-year time period.
+
+Y = Yes
+N= No
+Null = Unknown",√,√,√,ALPHA-NUMERIC,X(1)
+27,Loan Purpose ,An indicator that denotes whether the mortgage loan is either a refinance mortgage or a purchase money mortgage. Purpose may be the purchase of a new property or refinance of an existing lien (with cash out or with no cash out).,CAS/CIRT: Enhanced format starting with the July 2020 activity period,"Cash-Out Refinance = C
+Refinance = R
+Purchase = P
+Refinance-Not Specified = U ",√,√,√,ALPHA-NUMERIC,X(1)
+28,Property Type,"An indicator that denotes whether the property type secured by the mortgage loan is a condominium, co-operative, planned urban development (PUD), manufactured home, or single-family home.",CAS/CIRT: Enhanced format starting with the July 2020 activity period,"CO = condominium
+CP = co-operative
+PU = Planned Urban Development
+MH = manufactured home
+SF = single-family home",√,√,√,ALPHA-NUMERIC,X(2)
+29,Number of Units,"The number of units comprising the related mortgaged property (one, two, three, or four).",,,√,√,√,NUMERIC,9(1)
+30,Occupancy Status,The classification describing the property occupancy status at the time the loan was originated.,CAS/CIRT: Enhanced format starting with the July 2020 activity period,Principal = P; Second = S; Investor = I; Unknown = U,√,√,√,ALPHA-NUMERIC,X(1)
+31,Property State,A two-letter abbreviation indicating the state or territory within which the property securing the mortgage loan is located.,,,√,√,√,ALPHA-NUMERIC,X(2)
+32,Metropolitan Statistical Area (MSA),"The numeric Metropolitan Statistical Area Code for the property securing the mortgage loan. MSAs are established by the US Office of Management and Budget. An area usually qualifies as an MSA if it is defined by the Bureau of the Census as an urbanized area and has a population of 50,000 or more in a total metropolitan area of at least 100,000. An MSA may consist of one or more counties.",,"If the property is not in a designated MSA, the value will default to “00000.”",√,√,√,ALPHA-NUMERIC,X(5)
+33,Zip Code Short,Limited to the first three digits of the code designated by the U.S. Postal Service where the subject property is located.,,,√,√,√,ALPHA-NUMERIC,X(3)
+34,Mortgage Insurance Percentage,"The original percentage of mortgage insurance coverage obtained for an insured conventional mortgage loan and used following the occurrence of an event of default to calculate the insurance benefit, as defined by the underlying master primary insurance policy.",,,√,√,√,NUMERIC,9(3).99
+35,Amortization Type,The classification of the loan as having either a fixed- or an adjustable-interest rate at the time the loan was originated.,,Adjustable Rate Mortgages = ARM; Fixed Rate Mortgages = FRM,√,√,√,ALPHA-NUMERIC,X(3)
+36,Prepayment Penalty Indicator,An indicator that denotes whether the borrower is subject to a penalty for early payment of principal.,,Y = Yes; N = No,√,√,√,ALPHA-NUMERIC,X(1)
+37,Interest Only Loan Indicator,An indicator that denotes whether the loan only requires interest payments for a specified period of time beginning with the first payment date.,,Y = Yes; N = No,√,√,√,ALPHA-NUMERIC,X(1)
+38,Interest Only First Principal And Interest Payment Date,"For interest-only loans, the month and year that the first monthly scheduled fully amortizing principal and interest payment is due.",,,√,√,√,DATE,MMYYYY
+39,Months to Amortization,"For interest-only loans, the number of months from the current month to the first scheduled principal and interest payment date.",,,√,√,√,NUMERIC,9(3)
+40,Current Loan Delinquency Status,The number of months the obligor is delinquent as determined by the governing mortgage documents.,SF Loan Performance: Enhanced format with the October 2020 Release,"For mortgage loans removed from the reference pool or historical data set, this field will be blank, subsequent to the month of removal. If the delinquency is unknown, the value ‘XX’ will display.
+In the event the loan is greater than or equal to 99 months delinquent, the field will report a '99'.",√,√,√,ALPHA-NUMERIC,X(2)
+41,Loan Payment History,The coded string of values that describes the payment performance of the loan over the most recent 24 months.  The most recent month is located to the right.,SF Loan Performance : Align to standard starting with April 2020 monthly reporting period,"For mortgage loans removed from the reference pool, this field will be blank.
+In the event the loan is greater than or equal to 99 months delinquent, the field will report a 99.
+
+00 = Current
+01 = 30-59 days
+02 = 60-89 days
+03 = 90-119 days
+04 = 120 - 149 days
+05 = 150 - 179 days
+06 = 180 - 209 days, etc.
+XX = unknown ",√,√,√,ALPHA-NUMERIC,X(48)
+42,Modification Flag,An indicator that denotes if the mortgage loan has been modified.,,"Y = Yes
+N = No
+
+The Modification Flag will be set to “Y” once a mortgage loan has been modified. Given the various mortgage loan modification programs available to borrowers, a mortgage loan could be modified more than once. Although the Modification Flag is already set to “Y” from the first modification, changes related to a subsequent modification will be reflected in the data. Payment Deferrals are not considered legal modifications and will reflect a Modification Flag of N.",√,√,√,ALPHA-NUMERIC,X(1)
+43,Mortgage Insurance Cancellation Indicator,An indicator that denotes if the mortgage insurance (MI) has been cancelled since origination.,CAS/CIRT: October 2017 remittance period notice,"Y = MI has been cancelled
+M = MI has not been cancelled
+NA = Never has MI
+
+As of the October 2017 remittance period, the MI coverage status will continue to be populated for loans removed from a given reference pool. Prior to this remittance period, the MI Cancellation reflected “Null” for all loans upon removal. ",√,√,NA,ALPHA-NUMERIC,X (2)
+44,Zero Balance Code,"A code indicating the reason the loan's balance was reduced to zero or experienced a credit event, if applicable. ",,"01 = Prepaid or Matured
+02 =  Third Party Sale
+03 = Short Sale
+06 = Repurchased
+09 = Deed-in-Lieu; REO Disposition
+15 = Non Performing Note Sale
+16 = Reperforming Note Sale
+96 = Removal (non-credit event)
+
+Applies to all CAS deals prior to and including 2015-C03:
+
+97 = Delinquency (credit event due to D180)
+98 = Other Credit Event",√,√,√,ALPHA-NUMERIC,X(3)
+45,Zero Balance Effective Date,Date on which the mortgage loan balance was reduced to zero.,,,√,√,√,DATE,MMYYYY
+46,UPB at the Time of Removal,The unpaid principal balance of the loan at the time of removal.,,"Populated as a loan hits a Zero Balance Code, or is otherwise liquidated.",√,√,√,NUMERIC,9(10).99
+47,Repurchase Date,The date on which a Reversed Credit Event Reference Obligation occurs with respect to a loan.,,,√,√,NA,DATE,MMYYYY
+48,Scheduled Principal Current,"The minimum principal payment the borrower is obligated to pay for the corresponding reporting period, based on the terms provided in the related mortgage loan documents, provided that the payment is collected from the borrower by the servicer and reported to Fannie Mae for the corresponding reporting period.",,"The scheduled principal amount may be affected by changes to the amortization schedule resulting from prior period borrower prepayments of principal (e.g., unscheduled principal payments),  advanced scheduled payments, delinquency status of the loan, or corrections of previously made errors related to principal payments. ",√,NA,NA,NUMERIC,9(10).99
+49,Total Principal Current,The change between the prior reporting period’s disclosed Current Actual UPB and the current reporting period’s disclosed Current Actual UPB.,SF Loan Performance: Populated starting with the April 2020 activity period.,The total principal amount may be affected by corrections of previously made errors related to principal payments.   ,√,√,√,NUMERIC,9(10).99
+50,Unscheduled Principal Current,The principal amount received in excess of the scheduled principal payment collected from the borrower by the servicer and reported to Fannie Mae for the corresponding reporting period.,,The unscheduled principal amount may be affected by corrections of previously made errors related to principal payments.,√,NA,NA,NUMERIC,9(10).99
+51,Last Paid Installment Date,The due date of the last paid installment that was collected for the mortgage loan.,"CAS/CIRT: Enhanced format starting with the July 2020 activity period. 
+
+SF Loan Performance: Enhanced format with the October 2020 Release",,√,√,√,DATE,MMYYYY
+52,Foreclosure Date,The date on which the completion of the legal action of foreclosure occurred.,"CAS/CIRT: Enhanced format starting with the July 2020 activity period. 
+
+SF Loan Performance: Enhanced format with the October 2020 Release","Servicers may also refer to this as the liquidation or sale date, not to be confused with the REO sale date.  ",√,√,√,DATE,MMYYYY
+53,Disposition Date,The date on which Fannie Mae’s interest in a property ends through either the transfer of the property to a third party or the satisfaction of the mortgage obligation.,"CAS/CIRT: Enhanced format starting with the July 2020 activity period. 
+
+SF Loan Performance: Enhanced format with the October 2020 Release",,√,√,√,DATE,MMYYYY
+54,Foreclosure Costs,"Expenses associated with obtaining title to property from the mortgagor, valuing the property, and maintaining utility services to the property. Such costs include costs and fees associated with bankruptcy and foreclosure.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+55,Property Preservation and Repair Costs,"The expenses associated with securing and preserving the property including two major categories:  maintenance and repairs. Maintenance costs are associated with preserving the property through normal upkeep, while repairs are associated with either avoiding deterioration of the asset or a marketing decision to help maximize sales proceeds upon final disposition.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+56,Asset Recovery Costs,"Expenses associated with removing occupants and personal property from an occupied property post foreclosure. Such expenses include relocation assistance, deed-in-lieu fee, and fees and costs associated with eviction actions.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+57,Miscellaneous Holding Expenses and Credits,"Expenses and credits associated with preserving the property, including Homeowners Association and other dues; flood, hazard, and MI premiums and refunds; rental income; and title insurance costs.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+58,Associated Taxes for Holding Property,Payment of taxes associated with holding the property.,,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+59,Net Sales Proceeds,"Total cash received from the sale of the property net of any applicable selling expenses, such as fees and commissions, allowable for inclusion under the terms of the property sale, as currently reported on the HUD-1 or other settlement statement.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+60,Credit Enhancement Proceeds,"Proceeds from claims on primary and certain other limited mortgage insurance policies, and recourse and indemnification payments from lenders under arrangements designed to limit credit exposure to Fannie Mae.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+61,Repurchase Make Whole Proceeds,Amounts received by Fannie Mae under the terms of our representation and warranty arrangements for the repurchase of the mortgage loan or the subject property or loss reimbursement subsequent to property disposition.,,"Includes make whole proceeds associated with mortgage loans that were part of a bulk settlement. This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+62,Other Foreclosure Proceeds,"Amounts, other than sale proceeds, received by Fannie Mae following foreclosure of a property, including redemption proceeds received from the mortgagor.",,"This field will be populated after the disclosed disposition date of the mortgage loan or the subject property, as applicable, based on individual CRT deal claims and reporting timelines.",√,√,√,NUMERIC,9(10).99
+63,Modification-Related Non-Interest Bearing UPB,A portion of the UPB that will not accrue interest as a result of an eligible loan modification.This term does not include any non-interest bearing UPB created as a result of a payment deferral. ,,"Any non-interest bearing UPB created as part of a Loan Modification will be reflected in the ""Modification-Related Non-Interest Bearing UPB"" field.
+
+Any non-interest bearing UPB created as part of a Payment Deferral will be reflected in the ""Total Deferral Amount"" field.",√,√,√,NUMERIC,9(10).99
+64,Principal Forgiveness Amount,"A reduction of the UPB owed on a mortgage by a borrower that is formally agreed to by the lender and the borrower, usually in conjunction with a loan modification.",,,√,√,√,NUMERIC,9(10).99
+65,Original List Start Date,"The agreed upon date, between a property seller and a broker, authorizing the broker to begin the process to procure a buyer or tenant for the property seller’s real property.",CAS/CIRT: Enhanced format starting with the July 2020 activity period,,√,√,NA,DATE,MMYYYY
+66,Original List Price,The initial price at which a real property is offered for sale by the property seller.  ,,,√,√,NA,NUMERIC,9(10).99
+67,Current List Start Date,"The agreed upon date, between a property seller and a broker, authorizing the broker to begin the process to procure a buyer or tenant for the property seller’s real property.",CAS/CIRT: Enhanced format starting with the July 2020 activity period,,√,√,NA,DATE,MMYYYY
+68,Current List Price,The price at which a real property is offered for sale.,,,√,√,NA,NUMERIC,9(10).99
+69,Borrower Credit Score At Issuance,"A numerical value used by the financial services industry to evaluate the quality of borrower credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to FICO Score 5(1) developed by Fair Isaac Corporation and provided by Equifax Inc. and is distinct from the FICO Score referenced in Fannie Mae's Selling Guide, which may be provided by any of the three major credit repositories",CAS/CIRT: Enhanced starting with the July 2020 activity period,"Represents the most recently available borrower credit score provided by Equifax to Fannie Mae for the reference loan as of the date the CRT deal is issued. Starting with the July 2020 activity period, such borrower credit scores will be published as the mid point within a 5 point range.  If the borrower credit score is unknown, the value will be blank.",√,√,NA,NUMERIC,9(3)
+70,Co-Borrower Credit Score At Issuance,"A numerical value used by the financial services industry to evaluate the quality of borrower credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to FICO Score 5(1) developed by Fair Isaac Corporation and provided by Equifax Inc and is distinct from the FICO Score referenced in Fannie Mae's Selling Guide.",CAS/CIRT: Enhanced starting with the July 2020 activity period,"Represents the most recently available co-borrower credit score provided by Equifax to Fannie Mae for the reference loan as of the date the CRT deal is issued.  Starting with the July 2020 activity period, such borrower credit scores will be published as the mid point within a 5 point range.  If the co-borrower credit score is not applicable or unknown, the value will be blank.",√,√,NA,NUMERIC ,9(3)
+71,Borrower Credit Score Current ,"A numerical value used by the financial services industry to evaluate the quality of borrower credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to FICO Score 5(1) developed by Fair Isaac Corporation and provided by Equifax Inc and is distinct from the FICO Score referenced in Fannie Mae's Selling Guide, which may be provided by any of the three major credit repositories.",CAS/CIRT: Enhanced starting with the July 2020 activity period,"Represents the most recently available borrower credit score provided by Equifax to Fannie Mae for the reference loan. Starting with the July 2020 activity period, such borrower credit scores will be published as the mid point within a 5 point range.  If the borrower credit score is unknown, the value will be blank.",√,√,NA,NUMERIC,9(3)
+72,Co-Borrower Credit Score Current,"A numerical value used by the financial services industry to evaluate the quality of borrower credit. Credit scores are typically based on a proprietary statistical model that is developed for use by credit data repositories. These credit repositories apply the model to borrower credit information to arrive at a credit score. When this term is used by Fannie Mae, it is referring to FICO Score 5(1) developed by Fair Isaac Corporation and provided by Equifax Inc and is distinct from the FICO Score referenced in Fannie Mae's Selling Guide.",CAS/CIRT: Enhanced starting with the July 2020 activity period,"Represents the most recently available co-borrower credit score provided by Equifax to Fannie Mae for the reference loan. Starting with the July 2020 activity period, such borrower credit scores will be published as the mid point within a 5 point range.  If the co-borrower credit score is not applicable or unknown, the value will be blank.",√,√,NA,NUMERIC,9(3)
+73,Mortgage Insurance Type,The entity that is responsible for the Mortgage Insurance premium payment. ,"SF Loan Performance: A limited number of our loans in the SF Loan Performance data set from between [2000 and 2002] were acquired under our Investor Paid Mortgage Insurance (IPMI) programs, such loans are also coded as ""3""","1 = Borrower Paid
+2 = Lender Paid
+3 = Enterprise Paid *
+Null = No MI",√,√,√,ALPHA-NUMERIC,X(1)
+74,Servicing Activity Indicator,An indicator that denotes a change in servicing activity during the corresponding reporting period.,,"This indicator is designed to identify changes that have generally occurred to the primary servicer or sub-servicing arrangement for the mortgage loan.  Not all mortgage loans identified with this indicator require specific action on the part of the respective borrower or co-borrower.  
+
+Y = Yes
+N = No",√,√,√,ALPHA-NUMERIC,X(1)
+75,Current Period Modification Loss Amount,The loss amount calculated for a mortgage loan resulting from a modification event for the corresponding reporting period.,,"Determination of a modification event is defined, if applicable,  in each of the individual CRT offering documents.  If the current period modification loss amount is not applicable, the value will be blank.",√,√,NA,NUMERIC,9(10).99
+76,Cumulative Modification Loss Amount,The cumulative loss amount calculated for a mortgage loan resulting from a modification or modification events.,,"Determination of a modification event is, if applicable, defined in each of the individual CRT offering documents.  If the cumulative modification loss amount is not applicable, the value will be zero.",√,√,NA,NUMERIC,9(10).99
+77,Current Period Credit Event Net Gain or Loss,The net realized gain or loss amount calculated for a mortgage loan resulting from a credit event for the corresponding reporting period.,,"Determination of a credit event is defined in each of the individual CRT offering documents. A positive value indicates a net realized loss, and a negative value indicates a net realized gain. If the current period credit event net gain or loss is not applicable, the value will be blank.  This field will be populated based on the individual deal claims and reporting timeline after the disclosed Disposition Date of the mortgage loan or the subject property.",√,√,NA,NUMERIC,9(10).99
+78,Cumulative Credit Event Net Gain or Loss,The cumulative net realized gain or loss amounts for a mortgage loan resulting from a credit event.,,"Determination of a credit event is defined in each of the individual CRT offering documents. A positive value indicates a net realized loss, and a negative value indicates a net realized gain. If the cumulative credit event net gain or loss is not applicable, the value will be blank.  This field will be populated based on the individual deal claims and reporting timeline after the disclosed Disposition Date of the mortgage loan or the subject property.",√,√,NA,NUMERIC,9(10).99
+79,Special Eligibility Program,"A mortgage program with expanded eligibility criteria designed to increase and maintain home ownership. 
+
+• Home Ready - An affordable mortgage program designed for eligible, creditworthy borrowers. 
+• HFA Preferred - An affordable, conventional mortgage program available exclusively to housing financing agencies (HFAs) to maximize financing to low-to moderate-income borrowers. 
+• RefiNow - An affordable refinance program designed for eligible, creditworthy borrowers with an existing Fannie Mae-owned mortgage. 
+• Other - A special eligibility program not provided within the other enumerations. 
+• Not Applicable - The special eligibility program disclosure is not applicable to the related loan. 
+• Not Available - The special eligibility program disclosure is not available for the related loan.","CAS/CIRT/SF Loan Performance:
+HomeReady was rolled out with DU release 9.3 in December 2015. 
+
+CAS/CIRT: Enhanced format starting with the August 2022 activity period.
+
+SF Loan Performance: Previous HomeReady Indicator will be utilized until the January 2023 release at which point this will be replaced with the Special Eligibility Program enumeration.","• F – HFA Preferred™
+• H – HomeReady
+• R – RefiNow™
+• O – Other
+• 7 – Not Applicable
+• 9 – Not Available",√,√,√,ALPHA-NUMERIC,X(1)
+80,Foreclosure Principal Write-off Amount,"Amounts that Fannie Mae or its loan servicers have determined to be uncollectable under applicable state laws, due to foreclosure statute of limitations.",,,√,√,√,NUMERIC,9(10).99
+81,Relocation Mortgage Indicator,"An indicator that denotes whether or not the type of mortgage loan is a relocation mortgage loan, made to borrowers whose employers relocate their employees.",,Y = Yes; N = No,√,√,√,ALPHA-NUMERIC,X(1)
+82,Zero Balance Code Change Date,"The most recent date in which a loan status change was identified, resulting from corresponding change to the Zero Balance Code.",,,√,√,NA,DATE,MMYYYY
+83,Loan Holdback Indicator,"An indicator that denotes if a loan has been moved temporarily into a ‘hold’ status to allow Fannie Mae to further evaluate unique situations that may otherwise result in a credit event or loan removal. Such situations may include loans with reported data anomalies, loans currently in forbearance due to a natural disaster or loans refinanced under the High LTV program that will continue to be included in the reference pool.",,"Y = Yes (current)
+N = No (previously in loan hold but no longer in loan hold status)
+Null = Has not been classified under loan hold status.
+",√,√,NA,ALPHA-NUMERIC,X(1)
+84,Loan Holdback Effective Date,The date of the latest Loan Holdback indicator change.,,,√,√,NA,DATE,MMYYYY
+85,Delinquent Accrued Interest,The lost accrued interest amount calculated for a mortgage loan that becomes subject to a credit event for the corresponding reporting period.,,Determination of delinquent accrued interest is defined in each of the individual CRT offering documents.  This field will be populated based on the individual deal claims and reporting timeline after the disclosed Disposition Date of the mortgage loan or the subject property.,√,√,NA,NUMERIC,9(10).99
+86,Property Valuation Method ,An indicator that denotes the method by which the value of the subject property was obtained. ,CAS/CIRT: Enhanced format starting with the July 2020 activity period,"A = Appraisal
+C = Appraisal Waiver plus Property Data Collection - Condition 
+P = Appraisal Waiver plus Property Data Collection - Value
+R = GSE Targeted Refinance
+W = Appraisal Waiver
+O = Other
+
+CAS: Applies to CAS deals after CAS 2017C07, all prior deals will reflect null values. 
+
+CIRT: Applies to deals after CIRT 2017-7, all prior deals will reflect null values 
+
+SF Loan Performance: Applies to acquisitions on or after Jan 1 2017, all prior acquisitions will show null values",√,√,√,ALPHA-NUMERIC,X(1)
+87,High Balance Loan Indicator ,An indicator that denotes if the original principal balance of a mortgage loan is greater than the general conforming loan limit and up to the high-cost area loan limit.,"CAS/CIRT/SF Loan Performance: Based on loan limits after 2008. 
+
+CAS/CIRT: Enhanced format starting with the July 2020 activity period",Y = Yes; N = No,√,√,√,ALPHA-NUMERIC,X(1)
+88,ARM Initial Fixed-Rate Period  ≤ 5 YR Indicator,"For an adjustable-rate mortgage loan, an indicator that denotes if the Initial Fixed-Rate Period is less than or equal to five years.",,"Y = Yes; N = No
+
+Applicable to certain CIRT offerings",NA,√,NA,ALPHA-NUMERIC,X(1)
+89,ARM Product Type,"For an adjustable-rate mortgage loan, a string that denotes the Initial Fixed-Rate Period, the subsequent Interest Rate Adjustment Frequency, and the Original Loan Term.",,Applicable to certain CIRT offerings,NA,√,NA,ALPHA-NUMERIC,X(100)
+90,Initial Fixed-Rate Period ,"For an adjustable-rate mortgage loan, the number of months between the first full month the mortgage loan accrues interest and the initial interest rate change date. ",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9(4)
+91,Interest Rate Adjustment Frequency,"For an adjustable-rate mortgage loan, the number of months between scheduled rate changes. For loans with an Initial Fixed-Rate Period, the number of months between subsequent rate adjustments. ",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9(4)
+92,Next Interest Rate Adjustment Date,"For adjustable-rate loans, the month and year that the interest rate is next subject to change.",,Applicable to certain CIRT offerings,NA,√,NA,DATE,MMYYYY
+93,Next Payment Change Date,"For an adjustable-rate mortgage loan, the next date on which the payment amount due from the borrower is subject to change. ",,Applicable to certain CIRT offerings,NA,√,NA,DATE,MMYYYY
+94,Index,"For adjustable-rate loans, the description of the index on which adjustments to the interest rate are based.",,Applicable to certain CIRT offerings,NA,√,NA,ALPHA-NUMERIC,X(100)
+95,ARM Cap Structure,"For an adjustable-rate mortgage loan, a numeric string that explains the interest rate caps on the ARM. The first number is the Initial Interest Rate Cap Up Percent (i.e., the maximum percentage points the interest rate can adjust upward at the initial rate change date). The second number is the Periodic Interest Rate Cap Up Percent (i.e., the maximum percentage points the interest rate can adjust upward at each interest rate change date after the initial interest rate change date). The third number is the Lifetime Interest Rate Cap Up Percent (i.e., the maximum percentage points that the interest rate can adjust upward over the life of the loan relative to the initial interest rate).",,Applicable to certain CIRT offerings,NA,√,NA,ALPHA-NUMERIC,X(10)
+96,Initial Interest Rate Cap Up Percent,"For an adjustable-rate mortgage loan, the maximum percentage points the interest rate can adjust upward at the initial interest rate change date. ",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9(2).9999
+97,Periodic Interest Rate Cap Up Percent,"For an adjustable-rate mortgage loan, the maximum percentage points the interest rate can adjust upward at each interest rate change date after the initial interest rate change date. ",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9(2).9999
+98,Lifetime Interest Rate Cap Up Percent,"For an adjustable-rate mortgage loan, the maximum percentage points that the interest rate can adjust upward over the life of the loan relative to the initial interest rate.",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9(2).9999
+99,Mortgage Margin,"For an adjustable-rate mortgage loan, the rate that is added to the index value to establish the new interest rate (after applying all applicable caps and floors) accruing on the loan at each interest rate change date. ",,Applicable to certain CIRT offerings,NA,√,NA,NUMERIC,9.(2).9999
+100,ARM Balloon Indicator,"For an adjustable-rate mortgage loan, a code that denotes if the loan has a balloon feature.",,"Y = Yes; N = No
+
+Applicable to certain CIRT offerings
+
+",NA,√,NA,ALPHA-NUMERIC,X(1)
+101,ARM Plan Number,"For an adjustable-rate mortgage loan, a code identifying the standardized plan under which the mortgage loan was delivered to Fannie Mae. The ARM plan outlines the characteristics of the adjustable-rate mortgage loan, including the ARM Index, the Initial Fixed-Rate Period, the Cap Structure, look-back days, assumability, and the option to convert to a fixed-rate mortgage loan..",,"Applicable to certain CIRT offerings.
+
+The list of ARM Plans can be found in Fannie Mae’s Selling Guide. ",NA,√,NA,NUMERIC,9(4)
+102,Borrower Assistance Plan,An indicator that denotes the type of assistance plan that the borrower is enrolled in that provides temporary mortgage payment relief or an opportunity for the borrower to cure a mortgage delinquency over a defined period.,"CAS/CIRT: Enhanced format starting with the July 2020 activity period;  previously known as Forbearance Indicator; 
+
+CAS/CIRT: Starting with 2017 acquisitions and through the June 2020 activity period only the forbearance indicator (""F"") will be reported, thereafter the as shown indicators will be reported
+
+SF Loan Performance: Populated starting with the April 2020 activity period.","Such Borrower Assistance Plan indicator is as of the respective reporting period.
+
+F = Forbearance Plan
+R = Repayment Plan
+T = Trial Period Plan
+O = Other Workout Plan
+N = No Workout Plan
+7 = Not Applicable
+9 = Not Available",√,√,√,ALPHA-NUMERIC,X(1)
+103,High Loan to Value (HLTV) Refinance Option Indicator,"An indicator that denotes if an eligible original reference loan is refinanced under Fannie Mae’s HLTV refinance option, which results in such mortgage loan remaining in the Reference Pool, as further defined in each individual CRT document, if applicable.","CAS/CIRT/SF Loan Performance: The note date of the mortgage being refinanced must be on or after Oct 1, 2017. 
+
+CAS/CIRT: Enhanced format starting with the July 2020 activity period",Y = Yes; N = No,√,√,√,ALPHA-NUMERIC,X(1)
+104,Deal Name,The title of the series issuance.,,,√,√,NA,ALPHA-NUMERIC,X(200)
+105,Repurchase Make Whole Proceeds Flag,Indicates if Fannie Mae received proceeds under the terms of its representation and warranty arrangements for the repurchase of the mortgage loan. ,,  Y = Yes; N = No ,√,√,√,ALPHA-NUMERIC,X(1)
+106,Alternative Delinquency Resolution,"An indicator that denotes the loss mitigation solution designed to resolve delinquencies and help homeowners remain in their homes in accordance with the servicer’s contractual obligation, while allowing the loan to remain in the security.",Populated starting with the July 2020 activity period.,"Alternative Delinquency Resolution as of the respective reporting period
+
+P = payment deferral option
+C = payment deferral option specific to COVID-19
+D = payment deferral option specific to certain natural disaster related events
+7 = Not Applicable
+9 = Not Available",√,√,√,ALPHA-NUMERIC,X(1)
+107,Alternative Delinquency  Resolution Count,The total number of Alternative Delinquency Resolutions as reported by the servicer for a specific loan.,Populated starting with the July 2020 activity period.,,√,√,√,NUMERIC,9(3)
+108,Total Deferral Amount ,The total non-interest-bearing deferral amount related to one or more Alternative Delinquency Resolutions.,Populated starting with the July 2020 activity period.,"Any non-interest bearing UPB created as part of a Loan Modification will be reflected in the ""Modification-Related Non-Interest Bearing UPB"" field.
+
+Any non-interest bearing UPB created as part of a Payment Deferral will be reflected in the ""Total Deferral Amount"" field.",√,√,√,NUMERIC,9(10).99
+109,Payment Deferral Modification Event Indicator,An indicator that denotes if a payment deferral is contributing to a modification event,Populated starting with the October 2023 activity period.,"Y= Yes; N= No; 7 = Not Applicable 
+
+CAS/CIRT: All loans in deals where Payment Deferrals are not treated as a modification event will report 7 (Not Applicable)
+
+SF Loan Performance: All loans will report 7 (Not Applicable)",√,√,√,ALPHA-NUMERIC,X(1)
+110,Interest Bearing UPB,The current actual outstanding UPB of the mortgage loan less any non-interest bearing UPB resulting from an eligible modification event.,Populated starting with the October 2023 activity period.,"The Interest Bearing UPB is provided to assist in the calculation of Current Period Modification Loss Amount and Delinquent Accrued Interest.
+
+For CRT Deals where Payment Deferrals are treated as a modification event, the Interest Bearing UPB will be equal to the Current Actual UPB - Modification Related Non-Interest Bearing UPB* - Total Deferral Amount.
+
+For CRT Deals where Payment Deferrals are not treated as a modification event, the Interest Bearing UPB will be equal to the Current Actual UPB* - Modification Related Non-Interest Bearing UPB.
+
+For CIRT deals that do not contain a modification event provision, the Interest Bearing UPB will be equal to the Current Actual UPB*.
+
+For CAS deals that do not contain a modification event provision, the Interest Bearing UPB will be null.
+
+Due to borrower privacy considerations, this value will be masked for the first six months of the life of the loan.
+
+*If the Current Actual UPB has been reduced to zero due to a loss, the UPB at the Time of Removal is used. ",√,√,NA,NUMERIC,9(10).99
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
